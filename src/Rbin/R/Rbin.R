@@ -368,7 +368,7 @@ generate_correlation_chunk <- function(bin_dir, cor_dir, target_size, start_pos,
                 )$values
     }
     rr_mat1 = rr_mat1[index$V1<23,]
-    cc_mat = matrix(0, nrow=nrow(filenames), ncol=length(target_files))
+    cc_mat = matrix(0, nrow=length(filenames), ncol=length(target_files))
     for(x in 1:length(filenames)) {
         rr2= .C( "getValues",
                 "filename" = filenames[x],
